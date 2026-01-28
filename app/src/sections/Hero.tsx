@@ -174,21 +174,13 @@ export default function Hero() {
             {/* Logo / Title */}
             <h1
               ref={titleRef}
-              className="text-7xl sm:text-8xl lg:text-9xl font-black mb-6 glitch"
-              data-text="MESO"
-              style={{
-                fontFamily: 'Orbitron, sans-serif',
-                background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
+              className="text-7xl sm:text-8xl lg:text-9xl font-black mb-6"
+              style={{ fontFamily: 'Orbitron, sans-serif' }}
             >
-              {'MESO'.split('').map((char, i) => (
-                <span key={i} className="char inline-block">
-                  {char}
-                </span>
-              ))}
+              <span className="char inline-block text-white">M</span>
+              <span className="char inline-block text-white">E</span>
+              <span className="char inline-block text-white">S</span>
+              <span className="char inline-block neon-flicker">O</span>
             </h1>
 
             {/* Subtitle */}

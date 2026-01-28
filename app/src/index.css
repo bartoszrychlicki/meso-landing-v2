@@ -236,9 +236,33 @@
     0%, 100% { opacity: 1; }
     50% { opacity: 0.7; }
   }
-  
+
   .neon-pulse {
     animation: neon-pulse 2s ease-in-out infinite;
+  }
+
+  /* Neon Flicker Animation */
+  @keyframes neon-flicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      opacity: 1;
+      text-shadow:
+        0 0 5px var(--neon-magenta),
+        0 0 10px var(--neon-magenta),
+        0 0 20px var(--neon-magenta),
+        0 0 40px var(--neon-magenta),
+        0 0 80px var(--neon-magenta);
+    }
+    20%, 24%, 55% {
+      opacity: 0.6;
+      text-shadow:
+        0 0 2px var(--neon-magenta),
+        0 0 5px var(--neon-magenta);
+    }
+  }
+
+  .neon-flicker {
+    animation: neon-flicker 3s infinite;
+    color: var(--neon-magenta);
   }
   
   /* Floating Animation */
