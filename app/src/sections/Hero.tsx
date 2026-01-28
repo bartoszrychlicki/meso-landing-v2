@@ -1,16 +1,48 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+
+const dishes = [
+  { id: 'spicy-miso', image: '/images/spicy-miso.jpg', nameKey: 'spicyMiso' },
+  { id: 'tonkotsu', image: '/images/tonkotsu.jpg', nameKey: 'tonkotsu' },
+  { id: 'karaage', image: '/images/karaage.jpg', nameKey: 'karaageRiceSpicy' },
+  { id: 'gyoza', image: '/images/gyoza.jpg', nameKey: 'gyozaPork' },
+];
 
 export default function Hero() {
   const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const taglineRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLButtonElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const particlesRef = useRef<HTMLDivElement>(null);
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  // Auto-rotate carousel
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isAnimating) {
+        setCurrentIndex((prev) => (prev + 1) % dishes.length);
+      }
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isAnimating]);
+
+  const goToSlide = (index: number) => {
+    if (isAnimating || index === currentIndex) return;
+    setIsAnimating(true);
+    setCurrentIndex(index);
+    setTimeout(() => setIsAnimating(false), 500);
+  };
+
+  const goNext = () => goToSlide((currentIndex + 1) % dishes.length);
+  const goPrev = () => goToSlide((currentIndex - 1 + dishes.length) % dishes.length);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -38,11 +70,18 @@ export default function Hero() {
         { opacity: 1, y: 0, duration: 1, delay: 1.2, ease: 'power2.out' }
       );
 
+      // Tagline
+      gsap.fromTo(
+        taglineRef.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1, delay: 1.4, ease: 'power2.out' }
+      );
+
       // CTA button
       gsap.fromTo(
         ctaRef.current,
         { opacity: 0, scale: 0.8 },
-        { opacity: 1, scale: 1, duration: 0.6, delay: 1.5, ease: 'back.out(1.7)' }
+        { opacity: 1, scale: 1, duration: 0.6, delay: 1.6, ease: 'back.out(1.7)' }
       );
 
       // Hero image glitch reveal
@@ -87,6 +126,9 @@ export default function Hero() {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const currentDish = dishes[currentIndex];
+  const currentDishName = t.menu.items[currentDish.nameKey as keyof typeof t.menu.items]?.name || currentDish.id;
+
   return (
     <section
       ref={heroRef}
@@ -94,7 +136,7 @@ export default function Hero() {
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505]" />
-      
+
       {/* Floating particles */}
       <div ref={particlesRef} className="particles">
         {[...Array(20)].map((_, i) => (
@@ -152,10 +194,19 @@ export default function Hero() {
             {/* Subtitle */}
             <p
               ref={subtitleRef}
-              className="text-xl sm:text-2xl lg:text-3xl text-white/80 mb-8 font-light tracking-widest"
+              className="text-xl sm:text-2xl lg:text-3xl text-white/80 mb-4 font-light tracking-widest"
               style={{ fontFamily: 'Rajdhani, sans-serif' }}
             >
               {t.hero.subtitle}
+            </p>
+
+            {/* Tagline */}
+            <p
+              ref={taglineRef}
+              className="text-lg sm:text-xl text-white/60 mb-8 tracking-wide"
+              style={{ fontFamily: 'Rajdhani, sans-serif' }}
+            >
+              {t.hero.tagline}
             </p>
 
             {/* Japanese characters */}
@@ -173,7 +224,7 @@ export default function Hero() {
             </button>
           </div>
 
-          {/* Right side - Image */}
+          {/* Right side - Image Carousel */}
           <div ref={imageRef} className="relative">
             <div className="neon-border relative rounded-lg overflow-hidden border-2 border-transparent">
               {/* Corner decorations */}
@@ -182,24 +233,70 @@ export default function Hero() {
               <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-[#EB00FF] z-10" />
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-[#2400FF] z-10" />
 
-              <img
-                src="/images/hero-ramen.jpg"
-                alt="MESO Ramen"
-                className="w-full h-auto object-cover"
-              />
+              {/* Carousel Images */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                {dishes.map((dish, index) => (
+                  <img
+                    key={dish.id}
+                    src={dish.image}
+                    alt={t.menu.items[dish.nameKey as keyof typeof t.menu.items]?.name || dish.id}
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+                      index === currentIndex
+                        ? 'opacity-100 scale-100'
+                        : 'opacity-0 scale-105'
+                    }`}
+                  />
+                ))}
+              </div>
 
               {/* Overlay gradient */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
 
+              {/* Dish name overlay */}
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#050505] to-transparent">
+                <h3
+                  className="text-2xl font-bold text-white mb-1 transition-all duration-300"
+                  style={{ fontFamily: 'Orbitron, sans-serif' }}
+                >
+                  {currentDishName}
+                </h3>
+                <p className="text-[#00FF9D] text-sm font-mono">
+                  {t.menu.items[currentDish.nameKey as keyof typeof t.menu.items]?.price}
+                </p>
+              </div>
+
+              {/* Navigation arrows */}
+              <button
+                onClick={goPrev}
+                className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#050505]/50 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:border-[#2400FF] hover:bg-[#2400FF]/20 transition-all z-20"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                onClick={goNext}
+                className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#050505]/50 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:border-[#2400FF] hover:bg-[#2400FF]/20 transition-all z-20"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              {/* Dots indicator */}
+              <div className="absolute bottom-20 left-1/2 -translate-x-1/2 flex gap-2 z-20">
+                {dishes.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    className={`w-2 h-2 rounded-full transition-all ${
+                      index === currentIndex
+                        ? 'bg-[#2400FF] w-6'
+                        : 'bg-white/30 hover:bg-white/50'
+                    }`}
+                  />
+                ))}
+              </div>
+
               {/* Tech overlay */}
-              <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-                <div className="text-xs text-[#00FF9D] font-mono">
-                  <div>SYS.STATUS: ONLINE</div>
-                  <div>TEMP: 98.6°C</div>
-                </div>
-                <div className="text-xs text-[#EB00FF] font-mono">
-                  <div>v2.0.25</div>
-                </div>
+              <div className="absolute top-4 right-4 text-xs text-[#EB00FF] font-mono z-10">
+                <div>v2.0.25</div>
               </div>
             </div>
 

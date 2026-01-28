@@ -48,14 +48,6 @@ export default function Location() {
         }
       );
 
-      // Pin bounce animation
-      gsap.to('.map-pin', {
-        y: -10,
-        duration: 0.6,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power1.inOut',
-      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -139,67 +131,31 @@ export default function Location() {
             </button>
           </div>
 
-          {/* Right side - Map visualization */}
+          {/* Right side - Google Maps */}
           <div ref={mapRef} className="relative">
             <div className="cyber-card rounded-lg overflow-hidden aspect-square">
-              {/* Stylized map background */}
-              <div className="absolute inset-0 bg-[#0a0a0a]">
-                {/* Grid */}
-                <div
-                  className="absolute inset-0 opacity-30"
-                  style={{
-                    backgroundImage: `
-                      linear-gradient(rgba(36, 0, 255, 0.2) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(36, 0, 255, 0.2) 1px, transparent 1px)
-                    `,
-                    backgroundSize: '40px 40px',
-                  }}
-                />
-
-                {/* Streets */}
-                <svg className="absolute inset-0 w-full h-full" viewBox="0 0 400 400">
-                  <line x1="0" y1="200" x2="400" y2="200" stroke="#1a1a1a" strokeWidth="20" />
-                  <line x1="200" y1="0" x2="200" y2="400" stroke="#1a1a1a" strokeWidth="20" />
-                  <line x1="0" y1="100" x2="400" y2="100" stroke="#111" strokeWidth="10" />
-                  <line x1="0" y1="300" x2="400" y2="300" stroke="#111" strokeWidth="10" />
-                  <line x1="100" y1="0" x2="100" y2="400" stroke="#111" strokeWidth="10" />
-                  <line x1="300" y1="0" x2="300" y2="400" stroke="#111" strokeWidth="10" />
-                </svg>
-
-                {/* Location pin */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <div className="map-pin relative">
-                    <div className="w-16 h-16 rounded-full bg-[#2400FF]/30 flex items-center justify-center animate-pulse">
-                      <div className="w-10 h-10 rounded-full bg-[#2400FF]/50 flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-white" />
-                      </div>
-                    </div>
-                    {/* Pulse rings */}
-                    <div className="absolute inset-0 w-16 h-16 rounded-full border-2 border-[#2400FF] animate-ping opacity-30" />
-                  </div>
-                </div>
-
-                {/* MESO label */}
-                <div className="absolute top-1/2 left-1/2 translate-x-4 -translate-y-1/2 mt-12">
-                  <div className="bg-[#111111] border border-[#2400FF] px-4 py-2 rounded-sm">
-                    <span className="text-[#2400FF] font-bold" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-                      MESO
-                    </span>
-                  </div>
-                </div>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2321.5!2d18.4283!3d54.4397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd0b5b5b5b5b5b%3A0x0!2sBanino%2C%20Poland!5e0!3m2!1sen!2spl!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(1.1)' }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="MESO Location - Banino, Gdańsk"
+              />
 
               {/* Corner decorations */}
-              <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#00FF9D]" />
-              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#00FF9D]" />
-              <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#00FF9D]" />
-              <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#00FF9D]" />
+              <div className="absolute top-4 left-4 w-8 h-8 border-t-2 border-l-2 border-[#00FF9D] pointer-events-none" />
+              <div className="absolute top-4 right-4 w-8 h-8 border-t-2 border-r-2 border-[#00FF9D] pointer-events-none" />
+              <div className="absolute bottom-4 left-4 w-8 h-8 border-b-2 border-l-2 border-[#00FF9D] pointer-events-none" />
+              <div className="absolute bottom-4 right-4 w-8 h-8 border-b-2 border-r-2 border-[#00FF9D] pointer-events-none" />
             </div>
 
             {/* Floating coordinates */}
             <div className="absolute -bottom-4 -right-4 bg-[#111111] border border-[#EB00FF] px-4 py-2 rounded-sm">
               <div className="text-xs text-[#EB00FF] font-mono">
-                54.3520°N 18.6466°E
+                54.4397°N 18.4283°E
               </div>
             </div>
           </div>

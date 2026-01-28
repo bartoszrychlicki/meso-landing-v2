@@ -12,7 +12,8 @@ export const translations = {
     
     // Hero
     hero: {
-      subtitle: 'Inteligentny Azjatycki Komfort',
+      subtitle: 'Azjatycki comfort food z przyszłości',
+      tagline: 'Robiony przez Polaków dla Polaków w Gdańsku',
       cta: 'Zamów Teraz',
       scroll: 'Przewiń w dół',
     },
@@ -23,10 +24,11 @@ export const translations = {
       subtitle: 'Smart Asian Comfort',
       description1: 'Tworzymy nową kategorię w gastronomii: Smart Asian Comfort. Autentyczny japoński comfort food w cenie dostępnej na co dzień.',
       description2: 'Nasza misja to dostarczanie Polakom emocjonujących doznań kulinarnych w wygodny i przystępny cenowo sposób. Łączymy jakość najlepszych ramenowni z maksymalną wygodą modelu delivery-first.',
+      valuesTitle: 'Nasze Wartości',
       stats: {
-        authenticity: '100% Autentyczność',
-        quality: 'Zero Kompromisów',
-        innovation: 'Przyszłość Gastro',
+        affordability: 'Przystępna Cena',
+        taste: 'Autentyczny Smak',
+        innovation: 'Innowacyjność',
       },
     },
     
@@ -216,7 +218,8 @@ export const translations = {
     
     // Hero
     hero: {
-      subtitle: 'Smart Asian Comfort',
+      subtitle: 'Asian comfort food from the future',
+      tagline: 'Made by Poles for Poles in Gdańsk',
       cta: 'Order Now',
       scroll: 'Scroll Down',
     },
@@ -227,10 +230,11 @@ export const translations = {
       subtitle: 'Smart Asian Comfort',
       description1: 'We are creating a new category in gastronomy: Smart Asian Comfort. Authentic Japanese comfort food at an everyday affordable price.',
       description2: 'Our mission is to provide Poles with exciting culinary experiences in a convenient and affordable way. We combine the quality of the best ramen shops with the maximum convenience of a delivery-first model.',
+      valuesTitle: 'Our Values',
       stats: {
-        authenticity: '100% Authenticity',
-        quality: 'Zero Compromises',
-        innovation: 'Future of Food',
+        affordability: 'Affordable Price',
+        taste: 'Authentic Taste',
+        innovation: 'Innovation',
       },
     },
     
@@ -316,7 +320,7 @@ export const translations = {
     location: {
       title: 'LOCATION',
       subtitle: 'Find Us',
-      address: 'Banino, Gdansk',
+      address: 'Banino, Gdańsk',
       hours: 'Opening Hours',
       schedule: '12:00 - 21:30',
       days: '7 days a week',
