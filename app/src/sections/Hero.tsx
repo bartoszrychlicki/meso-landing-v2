@@ -171,16 +171,16 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Text */}
           <div className="text-center lg:text-left">
-            {/* Logo / Title */}
+            {/* Logo / Title - Neon Sign */}
             <h1
               ref={titleRef}
               className="text-7xl sm:text-8xl lg:text-9xl font-black mb-6"
               style={{ fontFamily: 'Orbitron, sans-serif' }}
             >
-              <span className="char inline-block text-white">M</span>
-              <span className="char inline-block text-white">E</span>
-              <span className="char inline-block text-white">S</span>
-              <span className="char inline-block neon-flicker">O</span>
+              <span className="char inline-block neon-letter-m">M</span>
+              <span className="char inline-block neon-letter-e">E</span>
+              <span className="char inline-block neon-letter-s">S</span>
+              <span className="char inline-block neon-letter-o">O</span>
             </h1>
 
             {/* Subtitle */}
