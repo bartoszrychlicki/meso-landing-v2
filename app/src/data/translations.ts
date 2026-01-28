@@ -124,6 +124,7 @@ export const translations = {
     team: {
       title: 'ZESPÓŁ',
       subtitle: 'Ludzie Za Marką',
+      clickToWatch: 'Kliknij aby zobaczyć',
       maciej: {
         name: 'Maciej Krawczun',
         role: 'Założyciel & Szef Kuchni',
@@ -329,6 +330,7 @@ export const translations = {
     team: {
       title: 'TEAM',
       subtitle: 'People Behind the Brand',
+      clickToWatch: 'Click to watch',
       maciej: {
         name: 'Maciej Krawczun',
         role: 'Founder & Head Chef',

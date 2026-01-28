@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChefHat, Award, Star } from 'lucide-react';
@@ -11,6 +11,7 @@ export default function Team() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -81,6 +82,7 @@ export default function Team() {
     return () => ctx.revert();
   }, []);
 
+
   return (
     <section
       id="team"
@@ -120,33 +122,72 @@ export default function Team() {
               <div className="absolute -inset-4 border border-[#2400FF]/30 rounded-lg" />
               <div className="absolute -inset-8 border border-[#EB00FF]/20 rounded-lg" />
 
-              {/* Image container */}
+              {/* Image/Video container */}
               <div className="cyber-card rounded-lg overflow-hidden h-full relative">
-                <img
-                  src="/images/maciej.jpg"
-                  alt={t.team.maciej.name}
-                  className="w-full h-full object-cover"
-                />
+                {!showVideo ? (
+                  <div
+                    className="cursor-pointer group transition-all duration-300 hover:scale-[1.02] h-full relative"
+                    onClick={() => setShowVideo(true)}
+                  >
+                    <img
+                      src="/images/maciej.jpg"
+                      alt={t.team.maciej.name}
+                      className="w-full h-full object-cover transition-all duration-300 group-hover:brightness-110"
+                    />
 
-                {/* Scan line overlay */}
-                <div className="scan-line absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#00FF9D] to-transparent opacity-50" />
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                      <div className="absolute inset-0 bg-gradient-to-tr from-[#2400FF]/20 via-[#EB00FF]/10 to-[#00FF9D]/20" />
+                      <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(36,0,255,0.4)]" />
+                    </div>
 
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
+                    {/* Click hint */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none">
+                      <div className="bg-[#2400FF]/90 backdrop-blur-sm px-6 py-3 rounded-full border border-[#2400FF] shadow-lg shadow-[#2400FF]/50">
+                        <p className="text-white font-bold text-sm tracking-wider uppercase">
+                          {t.team.clickToWatch}
+                        </p>
+                      </div>
+                    </div>
 
-                {/* Corner accents */}
-                <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[#2400FF]" />
-                <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-[#2400FF]" />
-                <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-[#EB00FF]" />
-                <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#EB00FF]" />
+                    {/* Scan line overlay */}
+                    <div className="scan-line absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#00FF9D] to-transparent opacity-50" />
 
-                {/* Bottom info bar */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#050505] to-transparent">
-                  <div className="flex items-center gap-2 text-xs text-[#00FF9D] font-mono">
-                    <span>ID:</span>
-                    <span>MACIEJ_K_001</span>
+                    {/* Overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent" />
+
+                    {/* Corner accents */}
+                    <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[#2400FF]" />
+                    <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-[#2400FF]" />
+                    <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-[#EB00FF]" />
+                    <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#EB00FF]" />
+
+                    {/* Bottom info bar */}
+                    <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-[#050505] to-transparent">
+                      <div className="flex items-center gap-2 text-xs text-[#00FF9D] font-mono">
+                        <span>ID:</span>
+                        <span>MACIEJ_K_001</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="relative h-full">
+                    <video
+                      src="/videos/Animacja_Postaci_Do_Gry.mp4"
+                      controls
+                      autoPlay
+                      className="w-full h-full object-cover"
+                    >
+                      Twoja przeglądarka nie wspiera odtwarzania wideo.
+                    </video>
+
+                    {/* Corner accents for video */}
+                    <div className="absolute top-4 left-4 w-6 h-6 border-t-2 border-l-2 border-[#00FF9D] pointer-events-none" />
+                    <div className="absolute top-4 right-4 w-6 h-6 border-t-2 border-r-2 border-[#00FF9D] pointer-events-none" />
+                    <div className="absolute bottom-4 left-4 w-6 h-6 border-b-2 border-l-2 border-[#EB00FF] pointer-events-none" />
+                    <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#EB00FF] pointer-events-none" />
+                  </div>
+                )}
               </div>
 
               {/* Floating badge */}
