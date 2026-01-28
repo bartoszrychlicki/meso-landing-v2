@@ -241,86 +241,37 @@
     animation: neon-pulse 2s ease-in-out infinite;
   }
 
-  /* Neon Sign Effect - Full Logo */
-  .neon-sign {
+  /* Neon letters - M and S static glow */
+  .neon-letter-m {
     color: #fff;
     text-shadow:
       0 0 5px #fff,
       0 0 10px #fff,
-      0 0 20px #ff00de,
-      0 0 40px #ff00de,
-      0 0 60px #ff00de,
-      0 0 80px #ff00de,
-      0 0 100px #ff00de,
-      0 0 120px #ff00de;
-    animation: neon-sign-glow 2s ease-in-out infinite alternate;
-  }
-
-  @keyframes neon-sign-glow {
-    0% {
-      text-shadow:
-        0 0 5px #fff,
-        0 0 10px #fff,
-        0 0 20px #ff00de,
-        0 0 40px #ff00de,
-        0 0 60px #ff00de,
-        0 0 80px #ff00de;
-    }
-    100% {
-      text-shadow:
-        0 0 10px #fff,
-        0 0 20px #fff,
-        0 0 30px #ff00de,
-        0 0 50px #ff00de,
-        0 0 80px #ff00de,
-        0 0 120px #ff00de,
-        0 0 150px #ff00de;
-    }
-  }
-
-  /* Neon flicker for individual letters */
-  .neon-letter-m {
-    color: #fff;
-    animation: neon-m 3s ease-in-out infinite;
-  }
-
-  .neon-letter-e {
-    color: #fff;
-    animation: neon-e 2.5s ease-in-out infinite;
-    animation-delay: 0.1s;
+      0 0 20px #a855f7,
+      0 0 40px #a855f7,
+      0 0 60px #a855f7,
+      0 0 80px #a855f7;
   }
 
   .neon-letter-s {
     color: #fff;
-    animation: neon-s 2.8s ease-in-out infinite;
-    animation-delay: 0.2s;
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px #f43f5e,
+      0 0 40px #f43f5e,
+      0 0 60px #f43f5e,
+      0 0 80px #f43f5e;
   }
 
-  .neon-letter-o {
+  /* E - same flicker speed as O, but less frequent */
+  .neon-letter-e {
     color: #fff;
-    animation: neon-o 2s ease-in-out infinite;
-    animation-delay: 0.15s;
-  }
-
-  @keyframes neon-m {
-    0%, 18%, 22%, 25%, 53%, 57%, 100% {
-      text-shadow:
-        0 0 5px #fff,
-        0 0 10px #fff,
-        0 0 20px #a855f7,
-        0 0 40px #a855f7,
-        0 0 60px #a855f7,
-        0 0 80px #a855f7;
-    }
-    20%, 24%, 55% {
-      text-shadow:
-        0 0 2px #a855f780,
-        0 0 5px #a855f750;
-    }
+    animation: neon-e 8s ease-in-out infinite;
   }
 
   @keyframes neon-e {
-    0%, 15%, 19%, 23%, 50%, 54%, 100% {
+    0%, 4%, 5.5%, 12%, 18%, 19.5%, 100% {
       text-shadow:
         0 0 5px #fff,
         0 0 10px #fff,
@@ -329,28 +280,17 @@
         0 0 60px #ec4899,
         0 0 80px #ec4899;
     }
-    17%, 21%, 52% {
+    4.8%, 11%, 19% {
       text-shadow:
         0 0 2px #ec489980,
         0 0 5px #ec489950;
     }
   }
 
-  @keyframes neon-s {
-    0%, 12%, 16%, 27%, 48%, 52%, 100% {
-      text-shadow:
-        0 0 5px #fff,
-        0 0 10px #fff,
-        0 0 20px #f43f5e,
-        0 0 40px #f43f5e,
-        0 0 60px #f43f5e,
-        0 0 80px #f43f5e;
-    }
-    14%, 25%, 50% {
-      text-shadow:
-        0 0 2px #f43f5e80,
-        0 0 5px #f43f5e50;
-    }
+  /* O - regular flicker */
+  .neon-letter-o {
+    color: #fff;
+    animation: neon-o 2.5s ease-in-out infinite;
   }
 
   @keyframes neon-o {

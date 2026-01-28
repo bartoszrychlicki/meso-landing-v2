@@ -46,18 +46,17 @@ export default function Hero() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation - character by character
+      // Title animation - fade in
       const titleChars = titleRef.current?.querySelectorAll('.char');
       if (titleChars) {
         gsap.fromTo(
           titleChars,
-          { y: 100, opacity: 0 },
+          { opacity: 0 },
           {
-            y: 0,
             opacity: 1,
-            duration: 0.8,
-            stagger: 0.1,
-            ease: 'expo.out',
+            duration: 1.2,
+            stagger: 0.15,
+            ease: 'power2.out',
             delay: 0.3,
           }
         );
