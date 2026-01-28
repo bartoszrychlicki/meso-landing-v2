@@ -22,8 +22,7 @@ export const translations = {
     about: {
       title: 'KONCEPT',
       subtitle: 'Smart Asian Comfort',
-      description1: 'Tworzymy nową kategorię w gastronomii: Smart Asian Comfort. Autentyczny japoński comfort food w cenie dostępnej na co dzień.',
-      description2: 'Nasza misja to dostarczanie Polakom emocjonujących doznań kulinarnych w wygodny i przystępny cenowo sposób. Łączymy jakość najlepszych ramenowni z maksymalną wygodą modelu delivery-first.',
+      description: 'Tworzymy nową kategorię w gastronomii: Smart Asian Comfort. Łączymy jakość najlepszych ramenowni z maksymalną wygodą modelu **delivery-first**. Rezygnując z drogich lokali i kosztownej obsługi, oferujemy **jakość restauracji w cenie fast foodu**.',
       valuesTitle: 'Nasze Wartości',
       stats: {
         affordability: 'Przystępna Cena',
@@ -228,8 +227,7 @@ export const translations = {
     about: {
       title: 'CONCEPT',
       subtitle: 'Smart Asian Comfort',
-      description1: 'We are creating a new category in gastronomy: Smart Asian Comfort. Authentic Japanese comfort food at an everyday affordable price.',
-      description2: 'Our mission is to provide Poles with exciting culinary experiences in a convenient and affordable way. We combine the quality of the best ramen shops with the maximum convenience of a delivery-first model.',
+      description: 'We are creating a new category in gastronomy: Smart Asian Comfort. We combine the quality of the best ramen shops with the maximum convenience of a **delivery-first** model. By skipping expensive locations and costly staff, we offer **restaurant quality at fast food prices**.',
       valuesTitle: 'Our Values',
       stats: {
         affordability: 'Affordable Price',
