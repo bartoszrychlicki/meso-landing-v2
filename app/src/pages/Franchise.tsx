@@ -118,7 +118,7 @@ export default function Franchise() {
               href="/"
               className="text-2xl font-black"
               style={{
-                fontFamily: 'Exo 2, sans-serif',
+                fontFamily: 'Space Grotesk, sans-serif',
                 background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -147,7 +147,7 @@ export default function Franchise() {
           <h1
             className="text-5xl sm:text-6xl lg:text-7xl font-black mb-6"
             style={{
-              fontFamily: 'Exo 2, sans-serif',
+              fontFamily: 'Space Grotesk, sans-serif',
               background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -173,7 +173,7 @@ export default function Franchise() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h2
             className="text-4xl sm:text-5xl font-bold text-center mb-16"
-            style={{ fontFamily: 'Exo 2, sans-serif' }}
+            style={{ fontFamily: 'Space Grotesk, sans-serif' }}
           >
             <span className="text-white">{t.franchise.benefits.title.split(' ')[0]}</span>{' '}
             <span className="text-[#2400FF]">MESO?</span>
@@ -193,7 +193,7 @@ export default function Franchise() {
                 </div>
                 <h3
                   className="text-xl font-bold text-white mb-3"
-                  style={{ fontFamily: 'Exo 2, sans-serif' }}
+                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
                 >
                   {benefit.title}
                 </h3>
@@ -217,7 +217,7 @@ export default function Franchise() {
             <div>
               <h2
                 className="text-4xl sm:text-5xl font-bold mb-8"
-                style={{ fontFamily: 'Exo 2, sans-serif' }}
+                style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
                 <span className="text-white">{t.franchise.investment.title}</span>
               </h2>
@@ -237,7 +237,7 @@ export default function Franchise() {
                 <p className="text-white/70 text-lg">{t.franchise.investment.description}</p>
               </div>
 
-              <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Exo 2, sans-serif' }}>
+              <h3 className="text-xl font-bold text-white mb-4" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
                 {language === 'pl' ? 'W Cenie:' : 'Includes:'}
               </h3>
 
@@ -257,7 +257,7 @@ export default function Franchise() {
             <div className="cyber-card p-8 rounded-lg text-center">
               <h3
                 className="text-2xl sm:text-3xl font-bold text-white mb-4"
-                style={{ fontFamily: 'Exo 2, sans-serif' }}
+                style={{ fontFamily: 'Space Grotesk, sans-serif' }}
               >
                 {t.franchise.cta.title}
               </h3>
@@ -295,7 +295,7 @@ export default function Franchise() {
             href="/"
             className="text-2xl font-black inline-block mb-4"
             style={{
-              fontFamily: 'Exo 2, sans-serif',
+              fontFamily: 'Space Grotesk, sans-serif',
               background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',

@@ -116,7 +116,7 @@ export default function CTA() {
           ref={titleRef}
           className="text-4xl xs:text-5xl sm:text-6xl lg:text-8xl font-black mb-6 px-2"
           style={{
-            fontFamily: 'Exo 2, sans-serif',
+            fontFamily: 'Space Grotesk, sans-serif',
             textShadow: `
               0 0 20px #2400FF,
               0 0 40px #2400FF,

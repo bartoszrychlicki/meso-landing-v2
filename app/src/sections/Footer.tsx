@@ -29,7 +29,7 @@ export default function Footer() {
             <h3
               className="text-4xl font-black mb-4"
               style={{
-                fontFamily: 'Exo 2, sans-serif',
+                fontFamily: 'Space Grotesk, sans-serif',
                 background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -59,7 +59,7 @@ export default function Footer() {
           <div>
             <h4
               className="text-lg font-bold text-white mb-4"
-              style={{ fontFamily: 'Exo 2, sans-serif' }}
+              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               LINKS
             </h4>
@@ -81,7 +81,7 @@ export default function Footer() {
           <div>
             <h4
               className="text-lg font-bold text-white mb-4"
-              style={{ fontFamily: 'Exo 2, sans-serif' }}
+              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
             >
               {t.footer.contact.title}
             </h4>

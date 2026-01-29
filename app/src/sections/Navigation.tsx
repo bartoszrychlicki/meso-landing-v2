@@ -47,7 +47,7 @@ export default function Navigation() {
               href="#"
               className="text-2xl font-black"
               style={{
-                fontFamily: 'Exo 2, sans-serif',
+                fontFamily: 'Space Grotesk, sans-serif',
                 background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -128,7 +128,7 @@ export default function Navigation() {
               onClick={() => scrollToSection(item.href)}
               className="text-3xl font-bold text-white hover:text-[#2400FF] transition-colors"
               style={{
-                fontFamily: 'Exo 2, sans-serif',
+                fontFamily: 'Space Grotesk, sans-serif',
                 animationDelay: `${index * 0.1}s`,
               }}
             >
