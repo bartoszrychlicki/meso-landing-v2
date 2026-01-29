@@ -171,12 +171,18 @@ export default function Team() {
                     </div>
                   </div>
                 ) : (
-                  <div className="relative h-full">
+                  <div
+                    className="relative h-full cursor-pointer"
+                    onClick={() => setShowVideo(false)}
+                  >
                     <video
                       src="/videos/Animacja_Postaci_Do_Gry.mp4"
-                      controls
                       autoPlay
+                      playsInline
+                      muted={false}
                       className="w-full h-full object-cover"
+                      onEnded={() => setShowVideo(false)}
+                      onClick={(e) => e.stopPropagation()}
                     >
                       Twoja przeglądarka nie wspiera odtwarzania wideo.
                     </video>
