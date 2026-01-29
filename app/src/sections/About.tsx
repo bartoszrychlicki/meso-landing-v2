@@ -144,9 +144,9 @@ export default function About() {
           <div className="lg:w-20 flex-shrink-0 hidden lg:block">
             <h2
               ref={titleRef}
-              className="text-5xl sm:text-6xl lg:text-7xl font-black text-white/10 sticky top-24"
+              className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-white/10 sticky top-24"
               style={{
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Rajdhani, sans-serif',
                 writingMode: 'vertical-rl',
                 textOrientation: 'mixed',
               }}
@@ -161,7 +161,7 @@ export default function About() {
             <h3
               className="text-3xl sm:text-4xl font-bold mb-8"
               style={{
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Rajdhani, sans-serif',
                 background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',

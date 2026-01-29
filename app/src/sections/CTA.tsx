@@ -114,9 +114,9 @@ export default function CTA() {
         {/* Main Title */}
         <h2
           ref={titleRef}
-          className="text-4xl xs:text-5xl sm:text-6xl lg:text-8xl font-black mb-6 px-2"
+          className="text-4xl xs:text-5xl sm:text-6xl lg:text-8xl font-semibold mb-6 px-2"
           style={{
-            fontFamily: 'Space Grotesk, sans-serif',
+            fontFamily: 'Rajdhani, sans-serif',
             textShadow: `
               0 0 20px #2400FF,
               0 0 40px #2400FF,

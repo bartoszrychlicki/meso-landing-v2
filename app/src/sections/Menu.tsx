@@ -126,9 +126,9 @@ export default function Menu() {
         {/* Section Header */}
         <div ref={titleRef} className="text-center mb-16">
           <h2
-            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-black mb-4 px-2"
+            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-semibold mb-4 px-2"
             style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Rajdhani, sans-serif',
               background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -194,7 +194,7 @@ export default function Menu() {
               <div className="p-5">
                 <h3
                   className="text-lg font-bold text-white mb-2"
-                  style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+                  style={{ fontFamily: 'Rajdhani, sans-serif' }}
                 >
                   {item.name}
                 </h3>

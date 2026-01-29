@@ -27,9 +27,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <h3
-              className="text-4xl font-black mb-4"
+              className="text-4xl font-semibold mb-4"
               style={{
-                fontFamily: 'Space Grotesk, sans-serif',
+                fontFamily: 'Rajdhani, sans-serif',
                 background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -59,7 +59,7 @@ export default function Footer() {
           <div>
             <h4
               className="text-lg font-bold text-white mb-4"
-              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+              style={{ fontFamily: 'Rajdhani, sans-serif' }}
             >
               LINKS
             </h4>
@@ -81,7 +81,7 @@ export default function Footer() {
           <div>
             <h4
               className="text-lg font-bold text-white mb-4"
-              style={{ fontFamily: 'Space Grotesk, sans-serif' }}
+              style={{ fontFamily: 'Rajdhani, sans-serif' }}
             >
               {t.footer.contact.title}
             </h4>

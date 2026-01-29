@@ -71,9 +71,9 @@ export default function Location() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2
-            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-black mb-4 px-2"
+            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-semibold mb-4 px-2"
             style={{
-              fontFamily: 'Space Grotesk, sans-serif',
+              fontFamily: 'Rajdhani, sans-serif',
               background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
@@ -97,7 +97,7 @@ export default function Location() {
                   <MapPin className="w-6 h-6 text-[#2400FF]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                  <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                     {t.location.subtitle}
                   </h3>
                   <p className="text-2xl text-white/80">{t.location.address}</p>
@@ -112,7 +112,7 @@ export default function Location() {
                   <Clock className="w-6 h-6 text-[#EB00FF]" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
+                  <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                     {t.location.hours}
                   </h3>
                   <p className="text-2xl text-white/80">{t.location.schedule}</p>
