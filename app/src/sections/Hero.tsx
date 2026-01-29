@@ -174,7 +174,7 @@ export default function Hero() {
             <h1
               ref={titleRef}
               className="text-7xl sm:text-8xl lg:text-9xl font-black mb-6"
-              style={{ fontFamily: 'Saira, sans-serif' }}
+              style={{ fontFamily: 'Exo 2, sans-serif' }}
             >
               <span className="char inline-block neon-letter-m">M</span>
               <span className="char inline-block neon-letter-e">E</span>
@@ -247,7 +247,7 @@ export default function Hero() {
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-[#050505] to-transparent">
                 <h3
                   className="text-2xl font-bold text-white mb-1 transition-all duration-300"
-                  style={{ fontFamily: 'Saira, sans-serif' }}
+                  style={{ fontFamily: 'Exo 2, sans-serif' }}
                 >
                   {currentDishName}
                 </h3>
