@@ -173,7 +173,7 @@ export default function Hero() {
             {/* Logo / Title - Neon Sign */}
             <h1
               ref={titleRef}
-              className="text-7xl sm:text-8xl lg:text-9xl font-semibold mb-6"
+              className="text-7xl sm:text-8xl lg:text-9xl font-bold mb-6"
               style={{ fontFamily: 'Rajdhani, sans-serif' }}
             >
               <span className="char inline-block neon-letter-m">M</span>

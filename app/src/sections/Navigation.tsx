@@ -45,7 +45,7 @@ export default function Navigation() {
             {/* Logo */}
             <a
               href="#"
-              className="text-2xl font-semibold"
+              className="text-2xl font-bold"
               style={{
                 fontFamily: 'Rajdhani, sans-serif',
                 background: 'linear-gradient(135deg, #2400FF, #EB00FF)',

@@ -144,7 +144,7 @@ export default function About() {
           <div className="lg:w-20 flex-shrink-0 hidden lg:block">
             <h2
               ref={titleRef}
-              className="text-5xl sm:text-6xl lg:text-7xl font-semibold text-white/10 sticky top-24"
+              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white/10 sticky top-24"
               style={{
                 fontFamily: 'Rajdhani, sans-serif',
                 writingMode: 'vertical-rl',

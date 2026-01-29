@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <h3
-              className="text-4xl font-semibold mb-4"
+              className="text-4xl font-bold mb-4"
               style={{
                 fontFamily: 'Rajdhani, sans-serif',
                 background: 'linear-gradient(135deg, #2400FF, #EB00FF)',

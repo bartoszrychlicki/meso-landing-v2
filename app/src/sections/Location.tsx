@@ -71,7 +71,7 @@ export default function Location() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2
-            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-semibold mb-4 px-2"
+            className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 px-2"
             style={{
               fontFamily: 'Rajdhani, sans-serif',
               background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
