@@ -84,7 +84,7 @@ export default function Navigation() {
 
               {/* Order button (desktop) */}
               <a
-                href="#"
+                href="https://order.mesofood.pl"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden sm:block px-6 py-2 bg-gradient-to-r from-[#2400FF] to-[#5E22F5] text-white text-sm font-bold uppercase tracking-wider rounded-sm hover:shadow-[0_0_20px_rgba(36,0,255,0.5)] transition-all"
@@ -138,7 +138,7 @@ export default function Navigation() {
 
           {/* Order button */}
           <a
-            href="#"
+            href="https://order.mesofood.pl"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-8 px-8 py-4 bg-gradient-to-r from-[#2400FF] to-[#EB00FF] text-white text-lg font-bold uppercase tracking-wider rounded-sm"

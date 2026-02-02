@@ -61,7 +61,7 @@ export default function CTA() {
   }, []);
 
   const handleOrderClick = () => {
-    window.open('#', '_blank');
+    window.open('https://order.mesofood.pl', '_blank');
   };
 
   return (
@@ -86,7 +86,7 @@ export default function CTA() {
       </div>
 
       {/* Vignette */}
-      <div className="absolute inset-0 bg-radial-gradient from-transparent to-[#050505]" 
+      <div className="absolute inset-0 bg-radial-gradient from-transparent to-[#050505]"
         style={{
           background: 'radial-gradient(ellipse at center, transparent 0%, #050505 70%)'
         }}

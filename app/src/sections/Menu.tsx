@@ -150,9 +150,8 @@ export default function Menu() {
           {menuItems.map((item, index) => (
             <div
               key={item.id}
-              className={`menu-card cyber-card rounded-lg overflow-hidden cursor-pointer transition-all duration-500 ${
-                activeIndex === index ? 'ring-2 ring-[#2400FF] scale-105' : ''
-              }`}
+              className={`menu-card cyber-card rounded-lg overflow-hidden cursor-pointer transition-all duration-500 ${activeIndex === index ? 'ring-2 ring-[#2400FF] scale-105' : ''
+                }`}
               onClick={() => handleCardClick(index)}
               style={{
                 transform: activeIndex === index ? 'translateY(-10px)' : 'none',
@@ -218,10 +217,15 @@ export default function Menu() {
 
         {/* View Full Menu CTA */}
         <div className="mt-16 text-center">
-          <button className="group relative px-8 py-4 border border-[#2400FF] text-white font-bold uppercase tracking-wider overflow-hidden transition-all hover:border-[#EB00FF]">
+          <a
+            href="https://order.mesofood.pl"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative inline-block px-8 py-4 border border-[#2400FF] text-white font-bold uppercase tracking-wider overflow-hidden transition-all hover:border-[#EB00FF]"
+          >
             <span className="relative z-10">{language === 'pl' ? 'Zobacz Pełne Menu' : 'View Full Menu'}</span>
             <div className="absolute inset-0 bg-gradient-to-r from-[#2400FF] to-[#EB00FF] opacity-0 group-hover:opacity-20 transition-opacity" />
-          </button>
+          </a>
         </div>
 
         {/* Category tabs */}

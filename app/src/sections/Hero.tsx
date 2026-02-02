@@ -118,7 +118,7 @@ export default function Hero() {
   }, []);
 
   const handleOrderClick = () => {
-    window.open('#', '_blank');
+    window.open('https://order.mesofood.pl', '_blank');
   };
 
   const scrollToAbout = () => {
@@ -231,11 +231,10 @@ export default function Hero() {
                     key={dish.id}
                     src={dish.image}
                     alt={t.menu.items[dish.nameKey as keyof typeof t.menu.items]?.name || dish.id}
-                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
-                      index === currentIndex
+                    className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${index === currentIndex
                         ? 'opacity-100 scale-100'
                         : 'opacity-0 scale-105'
-                    }`}
+                      }`}
                   />
                 ))}
               </div>
@@ -276,11 +275,10 @@ export default function Hero() {
                   <button
                     key={index}
                     onClick={() => goToSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentIndex
+                    className={`w-2 h-2 rounded-full transition-all ${index === currentIndex
                         ? 'bg-[#2400FF] w-6'
                         : 'bg-white/30 hover:bg-white/50'
-                    }`}
+                      }`}
                   />
                 ))}
               </div>
