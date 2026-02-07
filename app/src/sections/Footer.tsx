@@ -105,9 +105,28 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-white/60">
                 <MapPin className="w-4 h-4" />
-                Banino, Gdańsk
+                ul. Leśna 8/8, 80-322 Gdańsk
               </li>
             </ul>
+          </div>
+        </div>
+
+        {/* Company Info */}
+        <div className="pt-8 border-t border-white/10 mb-8">
+          <div className="text-center text-white/40 text-sm space-y-1">
+            <p>
+              <strong className="text-white/60">Rychlicki Holding Sp. z o.o.</strong>
+            </p>
+            <p>ul. Leśna 8/8, 80-322 Gdańsk | NIP: 9571130261</p>
+            <p>
+              <a href="mailto:kontakt@mesofood.pl" className="hover:text-[#2400FF] transition-colors">
+                kontakt@mesofood.pl
+              </a>
+              {' | '}
+              <a href="tel:+48508118783" className="hover:text-[#2400FF] transition-colors">
+                +48 508 118 783
+              </a>
+            </p>
           </div>
         </div>
 
