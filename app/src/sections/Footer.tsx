@@ -25,18 +25,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h3
-              className="text-4xl font-bold mb-4"
-              style={{
-                fontFamily: 'Rajdhani, sans-serif',
-                background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              MESO
-            </h3>
+            <img 
+              src="/logo-meso-food.jpg" 
+              alt="MESO FOOD" 
+              className="h-12 w-auto mb-4"
+            />
             <p className="text-white/60 mb-6">{t.footer.tagline}</p>
 
             {/* Social links */}

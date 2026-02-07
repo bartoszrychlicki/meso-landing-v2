@@ -43,18 +43,12 @@ export default function Navigation() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
-            <a
-              href="#"
-              className="text-2xl font-bold"
-              style={{
-                fontFamily: 'Rajdhani, sans-serif',
-                background: 'linear-gradient(135deg, #2400FF, #EB00FF)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-              }}
-            >
-              MESO
+            <a href="#" className="flex items-center">
+              <img 
+                src="/logo-meso-food.jpg" 
+                alt="MESO FOOD" 
+                className="h-8 lg:h-10 w-auto"
+              />
             </a>
 
             {/* Desktop Navigation */}
