@@ -1,13 +1,12 @@
-import { Instagram, Facebook, MessageCircle, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
   const { t } = useLanguage();
 
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram' },
-    { icon: Facebook, href: '#', label: 'Facebook' },
-    { icon: MessageCircle, href: '#', label: 'TikTok' },
+    { icon: Instagram, href: 'https://www.instagram.com/mesogdansk/', label: 'Instagram' },
+    { icon: Facebook, href: 'https://www.facebook.com/RamenGdansk/', label: 'Facebook' },
   ];
 
   const navLinks = [
