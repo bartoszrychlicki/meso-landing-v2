@@ -131,7 +131,7 @@ export default function Hero() {
   return (
     <section
       ref={heroRef}
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden cyber-grid"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden cyber-grid pt-20 lg:pt-24"
     >
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/50 to-[#050505]" />
