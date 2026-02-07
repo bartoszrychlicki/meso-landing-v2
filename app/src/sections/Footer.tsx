@@ -34,7 +34,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <img 
-              src="/logo-meso-food.jpg" 
+              src="/logo-meso-food-v2.jpg" 
               alt="MESO FOOD" 
               className="h-12 w-auto mb-4"
             />

@@ -45,7 +45,7 @@ export default function Navigation() {
             {/* Logo */}
             <a href="#" className="flex items-center">
               <img 
-                src="/logo-meso-food.jpg" 
+                src="/logo-meso-food-v2.jpg" 
                 alt="MESO FOOD" 
                 className="h-8 lg:h-10 w-auto"
               />
