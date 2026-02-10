@@ -135,7 +135,7 @@ export default function Location() {
           <div ref={mapRef} className="relative">
             <div className="cyber-card rounded-lg overflow-hidden aspect-square">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2321.5!2d18.5639!3d54.4031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBosma%C5%84ska%201c%2F2%2C%20D%C4%85browa!5e0!3m2!1spl!2spl!4v1234567890"
+                src="https://maps.google.com/maps?q=Bosma%C5%84ska+1c%2C+Gdynia+D%C4%85browa&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(1.1)' }}
