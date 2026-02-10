@@ -288,9 +288,10 @@ export default function Hero() {
                 >
                   {currentDishName}
                 </h3>
-                <p className="text-[#00FF9D] text-sm font-mono">
+                {/* Price temporarily hidden */}
+                {/* <p className="text-[#00FF9D] text-sm font-mono">
                   {t.menu.items[currentDish.nameKey as keyof typeof t.menu.items]?.price}
-                </p>
+                </p> */}
               </div>
 
               {/* Navigation arrows */}

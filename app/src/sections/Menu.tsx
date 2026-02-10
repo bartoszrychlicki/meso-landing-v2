@@ -183,10 +183,10 @@ export default function Menu() {
                   </div>
                 )}
 
-                {/* Price badge */}
-                <div className="absolute bottom-3 left-3 bg-[#050505]/80 backdrop-blur-sm px-3 py-1 rounded-sm border border-[#00FF9D]">
+                {/* Price badge - temporarily hidden */}
+                {/* <div className="absolute bottom-3 left-3 bg-[#050505]/80 backdrop-blur-sm px-3 py-1 rounded-sm border border-[#00FF9D]">
                   <span className="text-[#00FF9D] font-bold">{item.price}</span>
-                </div>
+                </div> */}
               </div>
 
               {/* Content */}
