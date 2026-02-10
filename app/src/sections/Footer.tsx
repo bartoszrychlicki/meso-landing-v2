@@ -20,7 +20,6 @@ export default function Footer() {
   const navLinks = [
     { label: t.footer.links.menu, href: '#menu' },
     { label: t.footer.links.franchise, href: '/franchise' },
-    { label: t.footer.links.contact, href: '#contact' },
     { label: t.footer.links.privacy, href: '#' },
   ];
 

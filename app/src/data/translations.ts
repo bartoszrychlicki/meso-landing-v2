@@ -113,7 +113,7 @@ export const translations = {
     location: {
       title: 'LOKALIZACJA',
       subtitle: 'Znajdź Nas',
-      address: 'Banino, Gdańsk',
+      address: 'Bosmańska 1c/2, Dąbrowa',
       hours: 'Godziny Otwarcia',
       schedule: '12:00 - 21:30',
       days: '7 dni w tygodniu',
@@ -151,8 +151,8 @@ export const translations = {
       },
       contact: {
         title: 'Kontakt',
-        email: 'hello@meso.pl',
-        phone: '+48 123 456 789',
+        email: 'kontakt@mesofood.pl',
+        phone: '+48 508 118 783',
       },
       copyright: '© 2025 MESO. Wszelkie prawa zastrzeżone.',
     },
@@ -319,7 +319,7 @@ export const translations = {
     location: {
       title: 'LOCATION',
       subtitle: 'Find Us',
-      address: 'Banino, Gdańsk',
+      address: 'Bosmańska 1c/2, Dąbrowa',
       hours: 'Opening Hours',
       schedule: '12:00 - 21:30',
       days: '7 days a week',
@@ -357,8 +357,8 @@ export const translations = {
       },
       contact: {
         title: 'Contact',
-        email: 'hello@meso.pl',
-        phone: '+48 123 456 789',
+        email: 'kontakt@mesofood.pl',
+        phone: '+48 508 118 783',
       },
       copyright: '© 2025 MESO. All rights reserved.',
     },

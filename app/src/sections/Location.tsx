@@ -135,14 +135,14 @@ export default function Location() {
           <div ref={mapRef} className="relative">
             <div className="cyber-card rounded-lg overflow-hidden aspect-square">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2321.5!2d18.4283!3d54.4397!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46fd0b5b5b5b5b5b%3A0x0!2sBanino%2C%20Poland!5e0!3m2!1sen!2spl!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2321.5!2d18.5639!3d54.4031!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sBosma%C5%84ska%201c%2F2%2C%20D%C4%85browa!5e0!3m2!1spl!2spl!4v1234567890"
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(1.1)' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="MESO Location - Banino, Gdańsk"
+                title="MESO Location - Bosmańska 1c/2, Dąbrowa"
               />
 
               {/* Corner decorations */}
