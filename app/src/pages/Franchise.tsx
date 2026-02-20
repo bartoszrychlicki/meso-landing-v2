@@ -264,7 +264,7 @@ export default function Franchise() {
               <p className="text-white/60 mb-8">{t.franchise.cta.description}</p>
 
               <a
-                href={`mailto:franchise@meso.pl`}
+                href={`mailto:kontakt@mesofood.pl`}
                 className="neon-btn text-white text-lg rounded-sm inline-flex items-center gap-3"
               >
                 <Mail className="w-5 h-5" />
@@ -277,10 +277,10 @@ export default function Franchise() {
                   {language === 'pl' ? 'Lub napisz do nas:' : 'Or write to us:'}
                 </p>
                 <a
-                  href="mailto:franchise@meso.pl"
+                  href="mailto:kontakt@mesofood.pl"
                   className="text-[#2400FF] hover:text-[#EB00FF] transition-colors"
                 >
-                  franchise@meso.pl
+                  kontakt@mesofood.pl
                 </a>
               </div>
             </div>
