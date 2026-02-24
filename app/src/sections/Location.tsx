@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Smartphone, MapPin, Truck, ChevronRight, Radio } from 'lucide-react';
+import { Smartphone, MapPin, Truck, ChevronRight, Radio, Star, Gift, Zap } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -122,6 +122,60 @@ export default function Location() {
                 {t.location.pickup.appName}
                 <ChevronRight className="w-4 h-4" />
               </a>
+
+              {/* MESO Club badge */}
+              <div className="mesoclub-badge group relative">
+                {/* Pill trigger */}
+                <div
+                  className="flex items-center gap-2.5 px-4 py-2.5 rounded-lg border cursor-default transition-all duration-300 group-hover:border-[#FFD700]/70 group-hover:bg-[#FFD700]/10"
+                  style={{
+                    background: 'linear-gradient(135deg, #1a1400, #0d0d00)',
+                    border: '1px solid rgba(255,215,0,0.35)',
+                  }}
+                >
+                  <Star
+                    className="mesoclub-star w-4 h-4 flex-shrink-0 fill-current"
+                    style={{ color: '#FFD700' }}
+                  />
+                  <div className="flex-1">
+                    <span
+                      className="text-xs font-black uppercase tracking-widest block leading-tight"
+                      style={{ color: '#FFD700', fontFamily: 'Rajdhani, sans-serif' }}
+                    >
+                      MESO CLUB
+                    </span>
+                    <span className="text-[10px] text-white/40">Zbieraj punkty · Odbieraj nagrody</span>
+                  </div>
+                  <span className="text-[#FFD700]/40 text-xs group-hover:text-[#FFD700]/80 transition-colors">
+                    ↓
+                  </span>
+                </div>
+
+                {/* Hover expand — benefits */}
+                <div className="overflow-hidden max-h-0 group-hover:max-h-48 transition-all duration-500 ease-out">
+                  <div
+                    className="mt-1 rounded-lg p-4 flex flex-col gap-3"
+                    style={{ background: 'linear-gradient(135deg, #1a1400, #0d0d00)', border: '1px solid rgba(255,215,0,0.2)' }}
+                  >
+                    {[
+                      { icon: Star, text: 'Punkty za każde zamówienie w MESO Order' },
+                      { icon: Gift, text: 'Darmowe posiłki i ekskluzywne nagrody' },
+                      { icon: Zap,  text: 'Specjalne oferty tylko dla członków klubu' },
+                    ].map(({ icon: Icon, text }, i) => (
+                      <div key={i} className="flex items-start gap-2.5">
+                        <Icon className="w-3.5 h-3.5 flex-shrink-0 mt-0.5" style={{ color: '#FFD700' }} />
+                        <p className="text-white/65 text-xs leading-relaxed">{text}</p>
+                      </div>
+                    ))}
+                    <p
+                      className="text-[10px] font-bold uppercase tracking-widest pt-1 border-t border-[#FFD700]/15"
+                      style={{ color: '#FFD700' }}
+                    >
+                      ✦ Tylko w aplikacji MESO Order
+                    </p>
+                  </div>
+                </div>
+              </div>
 
               {/* Address */}
               <div className="flex items-start gap-3 p-4 rounded-lg bg-white/5 border border-white/10">
