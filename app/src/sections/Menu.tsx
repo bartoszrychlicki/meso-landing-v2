@@ -97,6 +97,7 @@ export default function Menu() {
       name: t.menu.spicyMayo.name,
       description: t.menu.spicyMayo.description,
       price: '',
+      image: '/images/spicy-mayo.png',
       tag: t.menu.spicyMayo.tag,
       tagColor: '#FF6B35',
       tagIcon: ChefHat,
@@ -225,6 +226,12 @@ export default function Menu() {
                     >
                       <item.tagIcon className="w-3 h-3" />
                       {item.tag}
+                    </div>
+                  )}
+                  {item.special && (
+                    <div className="absolute bottom-3 left-3 flex items-center gap-1.5 bg-[#050505]/80 border border-[#FF6B35]/40 px-2 py-1 rounded-sm">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35] animate-pulse inline-block" />
+                      <span className="text-[10px] text-[#FF6B35] font-mono uppercase tracking-wider">wkrótce w sprzedaży</span>
                     </div>
                   )}
                 </div>
