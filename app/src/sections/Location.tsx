@@ -230,6 +230,24 @@ export default function Location() {
                 </div>
                 <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-[#FFC244] group-hover:translate-x-1 transition-all duration-300" />
               </a>
+
+              {/* Coverage zones */}
+              <div className="pt-2 border-t border-white/5">
+                <div className="flex items-center justify-between mb-2">
+                  <p className="text-white/40 text-xs uppercase tracking-widest">{t.location.delivery.coverageLabel}</p>
+                  <p className="text-[#EB00FF]/60 text-xs">{t.location.delivery.coverageHint}</p>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {t.location.delivery.coverageZones.map((zone: string) => (
+                    <span
+                      key={zone}
+                      className="text-[10px] font-mono px-2 py-0.5 rounded-sm border border-white/10 text-white/40 hover:border-[#EB00FF]/30 hover:text-white/60 transition-colors cursor-default"
+                    >
+                      {zone}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
