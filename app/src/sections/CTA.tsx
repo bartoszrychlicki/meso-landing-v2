@@ -11,9 +11,40 @@ export default function CTA() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
+  const bgImgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // BG image: fade in + zoom in on scroll trigger
+      gsap.fromTo(
+        bgImgRef.current,
+        { opacity: 0, scale: 1.12, filter: 'saturate(1.15) brightness(0.3) blur(12px)' },
+        {
+          opacity: 1,
+          scale: 1.05,
+          filter: 'saturate(1.15) brightness(0.55) blur(0px)',
+          duration: 1.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none',
+          },
+          onComplete: () => {
+            // After reveal: continuous slow Ken Burns drift
+            gsap.to(bgImgRef.current, {
+              scale: 1.12,
+              x: '-2%',
+              y: '-1.5%',
+              duration: 18,
+              ease: 'none',
+              repeat: -1,
+              yoyo: true,
+            });
+          },
+        }
+      );
+
       // Title animation
       gsap.fromTo(
         titleRef.current,
@@ -72,10 +103,11 @@ export default function CTA() {
       {/* Cyberpunk background image */}
       <div className="absolute inset-0 overflow-hidden">
         <img
+          ref={bgImgRef}
           src="/images/cta-bg.png"
           alt=""
-          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
-          style={{ filter: 'saturate(1.15) brightness(0.55)' }}
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          style={{ opacity: 0, willChange: 'transform, opacity, filter' }}
           aria-hidden="true"
         />
         {/* Dark overlay gradient — top + bottom fade to site bg */}
