@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ExternalLink, Download } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -152,11 +152,7 @@ export default function CTA() {
             {t.cta.button}
           </button>
 
-          <button className="cta-button group relative px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-wider overflow-hidden transition-all hover:border-[#00FF9D] rounded-sm flex items-center gap-3">
-            <Download className="w-5 h-5 text-[#00FF9D]" />
-            <span className="relative z-10">{t.cta.app}</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#00FF9D] to-[#2400FF] opacity-0 group-hover:opacity-10 transition-opacity" />
-          </button>
+
         </div>
 
         {/* Tech decorations */}
