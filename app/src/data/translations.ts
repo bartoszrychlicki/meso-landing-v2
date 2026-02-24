@@ -49,11 +49,12 @@ export const translations = {
         gyoza: 'Gyoza',
         karaage: 'Karaage',
         sides: 'Dodatki',
+        intro: '4 proste kategorie. U nas się nie zgubisz — azjatyckie jedzenie może być łatwe. Mamy coś dla każdego.',
         descriptions: {
-          ramen: 'Bogaty, głęboki azjatycki bulion — gotowany godzinami, serwowany w minuty.',
-          gyoza: 'Ręcznie lepione pierożki z różnymi farszami, smażone na złoto.',
-          karaage: 'Chrupiący japoński kurczak w naszym autorskim panierze — z ryżem lub frytkami.',
-          sides: 'Extras, sosy i dodatki, które robią różnicę.',
+          ramen: 'Pyszny, głęboki bulion który rozgrzeje duszę. Gotowany godzinami, serwowany w minuty.',
+          gyoza: 'Dla fanów czegoś lżejszego. Ręcznie lepione pierożki smażone na złoto — kilka kęsów i wiesz, że wróciisz.',
+          karaage: 'Nasz kurczak to nie byle frytki. Autorski panier, soczek w środku, chrup na zewnątrz. Z ryżem lub frytkami.',
+          sides: 'Nasze autorskie sosy i dodatki, które robią całą różnicę. Raz spróbujesz — będziesz dokładać.',
         },
       },
       spicyMayo: {
@@ -299,11 +300,12 @@ export const translations = {
         gyoza: 'Gyoza',
         karaage: 'Karaage',
         sides: 'Sides',
+        intro: '4 simple categories. You won\'t get lost here — Asian food can be easy. We have something for everyone.',
         descriptions: {
-          ramen: 'Rich, deep Asian broth — simmered for hours, served in minutes.',
-          gyoza: 'Hand-crafted dumplings with various fillings, pan-fried to golden perfection.',
-          karaage: 'Crispy Japanese chicken in our signature batter — with rice or fries.',
-          sides: 'Extras, sauces and sides that make all the difference.',
+          ramen: 'Deep, soul-warming broth. Simmered for hours, served in minutes. Once you try it, you\'ll get it.',
+          gyoza: 'For those who like something lighter. Hand-crafted dumplings pan-fried to golden perfection — a few bites and you\'re hooked.',
+          karaage: 'Our chicken is no ordinary fast food. Signature batter, juicy inside, crispy outside. With rice or fries.',
+          sides: 'Our signature sauces and extras that make all the difference. Try once — you\'ll always add them.',
         },
       },
       spicyMayo: {

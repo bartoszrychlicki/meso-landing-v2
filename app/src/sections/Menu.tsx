@@ -165,30 +165,66 @@ export default function Menu() {
           </h2>
         </div>
 
-        {/* Categories — 4 pills with descriptions */}
-        <div ref={catsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-14">
-          {categories.map((cat) => (
-            <div
-              key={cat.key}
-              className="cat-item cyber-card rounded-lg p-4 flex flex-col gap-2 group hover:scale-[1.02] transition-all duration-300"
-              style={{ borderColor: `${cat.color}20` }}
-            >
-              <div className="flex items-center gap-2">
-                <cat.icon className="w-4 h-4 flex-shrink-0" style={{ color: cat.color }} />
-                <span
-                  className="text-sm font-bold uppercase tracking-wider"
-                  style={{ fontFamily: 'Rajdhani, sans-serif', color: cat.color }}
-                >
-                  {cat.label}
-                </span>
-              </div>
-              <p className="text-white/50 text-xs leading-relaxed">{cat.description}</p>
+        {/* Categories intro */}
+        <div ref={catsRef}>
+          <p className="text-center text-white/60 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-10">
+            {t.menu.categories.intro}
+          </p>
+
+          {/* 4 category cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+            {categories.map((cat, i) => (
               <div
-                className="h-px w-0 group-hover:w-full transition-all duration-500"
-                style={{ background: `linear-gradient(90deg, ${cat.color}, transparent)` }}
-              />
-            </div>
-          ))}
+                key={cat.key}
+                className="cat-item group relative cyber-card rounded-xl overflow-hidden flex flex-col hover:scale-[1.03] transition-all duration-300 cursor-default"
+                style={{ minHeight: '200px' }}
+              >
+                {/* Colored top accent bar */}
+                <div className="h-1 w-full" style={{ background: `linear-gradient(90deg, ${cat.color}, transparent)` }} />
+
+                {/* Subtle color wash in background */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{ background: `radial-gradient(ellipse at top left, ${cat.color}12, transparent 70%)` }}
+                />
+
+                <div className="relative flex flex-col flex-1 p-6 gap-4">
+                  {/* Number + icon row */}
+                  <div className="flex items-center justify-between">
+                    <span
+                      className="text-4xl font-black leading-none"
+                      style={{ fontFamily: 'Rajdhani, sans-serif', color: `${cat.color}30` }}
+                    >
+                      0{i + 1}
+                    </span>
+                    <div
+                      className="w-10 h-10 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                      style={{ backgroundColor: `${cat.color}15`, border: `1px solid ${cat.color}40` }}
+                    >
+                      <cat.icon className="w-5 h-5" style={{ color: cat.color }} />
+                    </div>
+                  </div>
+
+                  {/* Label */}
+                  <h4
+                    className="text-xl font-bold uppercase tracking-wide"
+                    style={{ fontFamily: 'Rajdhani, sans-serif', color: cat.color }}
+                  >
+                    {cat.label}
+                  </h4>
+
+                  {/* Description */}
+                  <p className="text-white/55 text-sm leading-relaxed flex-1">{cat.description}</p>
+
+                  {/* Scan line on hover */}
+                  <div
+                    className="h-px w-0 group-hover:w-full transition-all duration-500 ease-out mt-auto"
+                    style={{ background: `linear-gradient(90deg, ${cat.color}, transparent)` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Sygnatury label */}
