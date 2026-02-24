@@ -120,13 +120,25 @@ export const translations = {
     
     // Location
     location: {
-      title: 'LOKALIZACJA',
-      subtitle: 'Znajdź Nas',
-      address: 'Bosmańska 1c/2, Dąbrowa',
-      hours: 'Godziny Otwarcia',
-      schedule: '12:00 - 21:30',
-      days: '7 dni w tygodniu',
-      cta: 'Wskazówki Dojazdu',
+      title: 'GDZIE NAS ZAMÓWIĆ',
+      subtitle: 'Delivery First',
+      lead: 'Aby zachować konkurencyjną cenę, zrezygnowaliśmy z drogich lokali i kosztownej obsługi. Jesteśmy **delivery-first** — jakość restauracji, bez restauracji.',
+      mobilePoints: 'W przyszłości znajdziesz też nasze mobilne punkty dystrybucji — najpierw w Trójmieście, potem w całej Polsce.',
+      pickup: {
+        title: 'Odbiór Własny',
+        subtitle: 'Zamów przez naszą aplikację i odbierz osobiście',
+        appName: 'MESO Order',
+        appCta: 'Zamów w aplikacji',
+        appUrl: 'https://order.mesofood.pl',
+        address: 'Bosmańska 1c/2, Dąbrowa k. Gdańska',
+        moreSoon: 'Więcej lokalizacji w Trójmieście już w 2026',
+      },
+      delivery: {
+        title: 'Dostawa do Domu',
+        subtitle: 'Zamawiaj przez platformy dostawcze',
+        woltUrl: 'https://wolt.com',
+        pyszneUrl: 'https://pyszne.pl',
+      },
     },
     
     // Team
@@ -335,13 +347,25 @@ export const translations = {
     
     // Location
     location: {
-      title: 'LOCATION',
-      subtitle: 'Find Us',
-      address: 'Bosmańska 1c/2, Dąbrowa',
-      hours: 'Opening Hours',
-      schedule: '12:00 - 21:30',
-      days: '7 days a week',
-      cta: 'Get Directions',
+      title: 'WHERE TO ORDER',
+      subtitle: 'Delivery First',
+      lead: 'To keep prices competitive, we skipped expensive locations and costly staff. We\'re **delivery-first** — restaurant quality, without the restaurant.',
+      mobilePoints: 'In the future you\'ll also find our mobile distribution points — first in Trójmiasto, then across Poland.',
+      pickup: {
+        title: 'Self Pickup',
+        subtitle: 'Order via our app and pick up in person',
+        appName: 'MESO Order',
+        appCta: 'Order in app',
+        appUrl: 'https://order.mesofood.pl',
+        address: 'Bosmańska 1c/2, Dąbrowa near Gdańsk',
+        moreSoon: 'More locations in Trójmiasto coming in 2026',
+      },
+      delivery: {
+        title: 'Home Delivery',
+        subtitle: 'Order through delivery platforms',
+        woltUrl: 'https://wolt.com',
+        pyszneUrl: 'https://pyszne.pl',
+      },
     },
     
     // Team
