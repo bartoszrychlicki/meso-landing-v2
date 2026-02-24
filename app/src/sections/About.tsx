@@ -96,9 +96,9 @@ export default function About() {
   }, []);
 
   const stats = [
-    { icon: Wallet, label: t.about.stats.affordability, color: '#00FF9D' },
-    { icon: Utensils, label: t.about.stats.taste, color: '#EB00FF' },
-    { icon: Lightbulb, label: t.about.stats.innovation, color: '#2400FF' },
+    { icon: Wallet, label: t.about.stats.affordability.label, description: t.about.stats.affordability.description, color: '#00FF9D' },
+    { icon: Utensils, label: t.about.stats.taste.label, description: t.about.stats.taste.description, color: '#EB00FF' },
+    { icon: Lightbulb, label: t.about.stats.innovation.label, description: t.about.stats.innovation.description, color: '#2400FF' },
   ];
 
   const renderDescription = (text: string) => {
@@ -193,13 +193,16 @@ export default function About() {
                     {stats.map((stat, index) => (
                       <div
                         key={index}
-                        className="stat-item cyber-card p-4 rounded-lg flex items-center gap-4 group hover:scale-[1.02] transition-transform"
+                        className="stat-item cyber-card p-4 rounded-lg flex items-start gap-4 group hover:scale-[1.02] transition-transform"
                       >
                         <stat.icon
-                          className="w-8 h-8 flex-shrink-0 transition-transform group-hover:scale-110"
+                          className="w-8 h-8 flex-shrink-0 mt-0.5 transition-transform group-hover:scale-110"
                           style={{ color: stat.color }}
                         />
-                        <span className="text-white text-sm font-bold">{stat.label}</span>
+                        <div>
+                          <span className="text-white text-sm font-bold block">{stat.label}</span>
+                          <p className="text-white/50 text-xs mt-1 leading-relaxed">{stat.description}</p>
+                        </div>
                       </div>
                     ))}
                   </div>

@@ -25,9 +25,18 @@ export const translations = {
       description: 'Tworzymy nową kategorię w gastronomii: Smart Asian Comfort. Łączymy jakość najlepszych ramenowni z maksymalną wygodą modelu **delivery-first**. Rezygnując z drogich lokali i kosztownej obsługi, oferujemy **jakość restauracji w cenie fast foodu**.',
       valuesTitle: 'Nasze Wartości',
       stats: {
-        affordability: 'Przystępna Cena',
-        taste: 'Autentyczny Smak',
-        innovation: 'Innowacyjność',
+        affordability: {
+          label: 'Przystępna Cena',
+          description: 'Dbamy o to, by nasze dania były atrakcyjne cenowo i dostępne dla każdego — nie tylko od święta, ale na co dzień.',
+        },
+        taste: {
+          label: 'Autentyczny Smak',
+          description: 'Nasze przepisy inspirowane są autentyczną kuchnią azjatycką — używamy oryginalnych produktów i pracujemy na maszynach prosto z Azji.',
+        },
+        innovation: {
+          label: 'Innowacyjność',
+          description: 'Podchodzimy do gastronomii inaczej. Innowacyjny system zamawiania, nowoczesne procedury i świeży marketing — rzeczy, których nie zobaczysz nigdzie indziej.',
+        },
       },
     },
     
@@ -231,9 +240,18 @@ export const translations = {
       description: 'We are creating a new category in gastronomy: Smart Asian Comfort. We combine the quality of the best ramen shops with the maximum convenience of a **delivery-first** model. By skipping expensive locations and costly staff, we offer **restaurant quality at fast food prices**.',
       valuesTitle: 'Our Values',
       stats: {
-        affordability: 'Affordable Price',
-        taste: 'Authentic Taste',
-        innovation: 'Innovation',
+        affordability: {
+          label: 'Affordable Price',
+          description: 'We make sure our dishes are priced to be enjoyed every day — not just on special occasions.',
+        },
+        taste: {
+          label: 'Authentic Taste',
+          description: 'Our recipes are inspired by authentic Asian cuisine — we use original ingredients and equipment straight from Asia.',
+        },
+        innovation: {
+          label: 'Innovation',
+          description: 'We approach gastronomy differently — innovative ordering systems, modern preparation processes, and fresh marketing you won\'t find anywhere else.',
+        },
       },
     },
     
