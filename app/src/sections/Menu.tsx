@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Flame, Star } from 'lucide-react';
+import { Flame, Star, Soup, Ham, ChefHat, Plus } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,18 +11,51 @@ interface MenuItem {
   name: string;
   description: string;
   price: string;
-  image: string;
+  image?: string;
   tag?: string;
   tagColor?: string;
   tagIcon?: React.ElementType;
+  special?: boolean;
 }
 
 export default function Menu() {
   const { t, language } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLDivElement>(null);
+  const catsRef = useRef<HTMLDivElement>(null);
   const carouselRef = useRef<HTMLDivElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+
+  const categories = [
+    {
+      key: 'ramen',
+      label: t.menu.categories.ramen,
+      description: t.menu.categories.descriptions.ramen,
+      icon: Soup,
+      color: '#EB00FF',
+    },
+    {
+      key: 'karaage',
+      label: t.menu.categories.karaage,
+      description: t.menu.categories.descriptions.karaage,
+      icon: Flame,
+      color: '#FF6B35',
+    },
+    {
+      key: 'gyoza',
+      label: t.menu.categories.gyoza,
+      description: t.menu.categories.descriptions.gyoza,
+      icon: Ham,
+      color: '#00FF9D',
+    },
+    {
+      key: 'sides',
+      label: t.menu.categories.sides,
+      description: t.menu.categories.descriptions.sides,
+      icon: Plus,
+      color: '#2400FF',
+    },
+  ];
 
   const menuItems: MenuItem[] = [
     {
@@ -54,61 +87,53 @@ export default function Menu() {
     },
     {
       id: 'gyoza',
-      name: language === 'pl' ? 'Gyoza Wieprzowina' : 'Pork Gyoza',
-      description: t.menu.items.gyozaPork.description,
-      price: t.menu.items.gyozaPork.price,
+      name: t.menu.items.gyozaShrimp.name,
+      description: t.menu.items.gyozaShrimp.description,
+      price: t.menu.items.gyozaShrimp.price,
       image: '/images/gyoza.jpg',
+    },
+    {
+      id: 'spicy-mayo',
+      name: t.menu.spicyMayo.name,
+      description: t.menu.spicyMayo.description,
+      price: '',
+      tag: t.menu.spicyMayo.tag,
+      tagColor: '#FF6B35',
+      tagIcon: ChefHat,
+      special: true,
     },
   ];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Title animation
       gsap.fromTo(
         titleRef.current,
         { y: 50, opacity: 0 },
         {
-          y: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-            toggleActions: 'play none none reverse',
-          },
+          y: 0, opacity: 1, duration: 0.8, ease: 'power3.out',
+          scrollTrigger: { trigger: sectionRef.current, start: 'top 80%', toggleActions: 'play none none reverse' },
         }
       );
 
-      // Cards stagger animation
+      const catItems = catsRef.current?.querySelectorAll('.cat-item');
+      if (catItems) {
+        gsap.fromTo(catItems, { y: 30, opacity: 0 }, {
+          y: 0, opacity: 1, duration: 0.5, stagger: 0.1, ease: 'power3.out',
+          scrollTrigger: { trigger: catsRef.current, start: 'top 80%', toggleActions: 'play none none reverse' },
+        });
+      }
+
       const cards = carouselRef.current?.querySelectorAll('.menu-card');
       if (cards) {
-        gsap.fromTo(
-          cards,
-          { y: 80, opacity: 0, rotateY: -15 },
-          {
-            y: 0,
-            opacity: 1,
-            rotateY: 0,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: 'power3.out',
-            scrollTrigger: {
-              trigger: carouselRef.current,
-              start: 'top 75%',
-              toggleActions: 'play none none reverse',
-            },
-          }
-        );
+        gsap.fromTo(cards, { y: 80, opacity: 0, rotateY: -15 }, {
+          y: 0, opacity: 1, rotateY: 0, duration: 0.8, stagger: 0.15, ease: 'power3.out',
+          scrollTrigger: { trigger: carouselRef.current, start: 'top 75%', toggleActions: 'play none none reverse' },
+        });
       }
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
-
-  const handleCardClick = (index: number) => {
-    setActiveIndex(index);
-  };
 
   return (
     <section
@@ -116,15 +141,15 @@ export default function Menu() {
       ref={sectionRef}
       className="relative min-h-screen w-full py-24 overflow-hidden"
     >
-      {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#2400FF]/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#EB00FF]/10 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Section Header */}
-        <div ref={titleRef} className="text-center mb-16">
+        <div ref={titleRef} className="text-center mb-10">
           <h2
             className="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-bold mb-4 px-2"
             style={{
@@ -137,78 +162,122 @@ export default function Menu() {
           >
             {t.menu.title}
           </h2>
-          <p className="text-xl text-white/60 tracking-widest uppercase">
-            {t.menu.subtitle}
-          </p>
         </div>
 
-        {/* Menu Grid */}
+        {/* Categories — 4 pills with descriptions */}
+        <div ref={catsRef} className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-14">
+          {categories.map((cat) => (
+            <div
+              key={cat.key}
+              className="cat-item cyber-card rounded-lg p-4 flex flex-col gap-2 group hover:scale-[1.02] transition-all duration-300"
+              style={{ borderColor: `${cat.color}20` }}
+            >
+              <div className="flex items-center gap-2">
+                <cat.icon className="w-4 h-4 flex-shrink-0" style={{ color: cat.color }} />
+                <span
+                  className="text-sm font-bold uppercase tracking-wider"
+                  style={{ fontFamily: 'Rajdhani, sans-serif', color: cat.color }}
+                >
+                  {cat.label}
+                </span>
+              </div>
+              <p className="text-white/50 text-xs leading-relaxed">{cat.description}</p>
+              <div
+                className="h-px w-0 group-hover:w-full transition-all duration-500"
+                style={{ background: `linear-gradient(90deg, ${cat.color}, transparent)` }}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Sygnatury label */}
+        <p className="text-center text-white/40 text-xs uppercase tracking-widest mb-8">
+          {t.menu.subtitle}
+        </p>
+
+        {/* Menu Grid — 5 cards */}
         <div
           ref={carouselRef}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"
         >
           {menuItems.map((item, index) => (
             <div
               key={item.id}
-              className={`menu-card cyber-card rounded-lg overflow-hidden cursor-pointer transition-all duration-500 ${activeIndex === index ? 'ring-2 ring-[#2400FF] scale-105' : ''
-                }`}
-              onClick={() => handleCardClick(index)}
-              style={{
-                transform: activeIndex === index ? 'translateY(-10px)' : 'none',
-              }}
+              className={`menu-card cyber-card rounded-lg overflow-hidden cursor-pointer transition-all duration-500 ${
+                activeIndex === index ? 'ring-2 ring-[#2400FF] scale-105' : ''
+              } ${item.special ? 'lg:col-span-1' : ''}`}
+              onClick={() => setActiveIndex(index)}
+              style={{ transform: activeIndex === index ? 'translateY(-10px)' : 'none' }}
             >
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                />
-
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
-
-                {/* Tag */}
-                {item.tag && item.tagIcon && (
-                  <div
-                    className="absolute top-3 right-3 px-3 py-1 rounded-sm text-xs font-bold flex items-center gap-1"
+              {/* Image or Special background */}
+              {item.image ? (
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent" />
+                  {item.tag && item.tagIcon && (
+                    <div
+                      className="absolute top-3 right-3 px-3 py-1 rounded-sm text-xs font-bold flex items-center gap-1"
+                      style={{ backgroundColor: `${item.tagColor}20`, color: item.tagColor, border: `1px solid ${item.tagColor}` }}
+                    >
+                      <item.tagIcon className="w-3 h-3" />
+                      {item.tag}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                /* Spicy Mayo — special no-photo card */
+                <div className="relative h-48 overflow-hidden flex items-center justify-center"
+                  style={{ background: 'linear-gradient(135deg, #1a0a00 0%, #2d1200 50%, #1a0505 100%)' }}
+                >
+                  {/* Animated drip pattern */}
+                  <div className="absolute inset-0 opacity-20"
                     style={{
-                      backgroundColor: `${item.tagColor}20`,
-                      color: item.tagColor,
-                      border: `1px solid ${item.tagColor}`,
+                      backgroundImage: 'radial-gradient(circle at 30% 40%, #FF6B35 0%, transparent 50%), radial-gradient(circle at 70% 60%, #EB00FF 0%, transparent 40%)',
                     }}
-                  >
-                    <item.tagIcon className="w-3 h-3" />
-                    {item.tag}
+                  />
+                  <div className="relative z-10 text-center">
+                    <div className="text-5xl mb-2">🌶️</div>
+                    <div
+                      className="text-xs font-bold uppercase tracking-widest"
+                      style={{ color: '#FF6B35', fontFamily: 'Rajdhani, sans-serif' }}
+                    >
+                      18 składników
+                    </div>
                   </div>
-                )}
-
-                {/* Price badge - temporarily hidden */}
-                {/* <div className="absolute bottom-3 left-3 bg-[#050505]/80 backdrop-blur-sm px-3 py-1 rounded-sm border border-[#00FF9D]">
-                  <span className="text-[#00FF9D] font-bold">{item.price}</span>
-                </div> */}
-              </div>
+                  {item.tag && item.tagIcon && (
+                    <div
+                      className="absolute top-3 right-3 px-3 py-1 rounded-sm text-xs font-bold flex items-center gap-1"
+                      style={{ backgroundColor: `${item.tagColor}20`, color: item.tagColor, border: `1px solid ${item.tagColor}` }}
+                    >
+                      <item.tagIcon className="w-3 h-3" />
+                      {item.tag}
+                    </div>
+                  )}
+                  {/* "wkrótce" badge */}
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1.5 bg-[#050505]/80 border border-[#FF6B35]/40 px-2 py-1 rounded-sm">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF6B35] animate-pulse inline-block" />
+                    <span className="text-[10px] text-[#FF6B35] font-mono uppercase tracking-wider">wkrótce w sprzedaży</span>
+                  </div>
+                </div>
+              )}
 
               {/* Content */}
               <div className="p-5">
-                <h3
-                  className="text-lg font-bold text-white mb-2"
-                  style={{ fontFamily: 'Rajdhani, sans-serif' }}
-                >
+                <h3 className="text-lg font-bold text-white mb-2" style={{ fontFamily: 'Rajdhani, sans-serif' }}>
                   {item.name}
                 </h3>
-                <p className="text-sm text-white/60 leading-relaxed">
-                  {item.description}
-                </p>
+                <p className="text-sm text-white/60 leading-relaxed">{item.description}</p>
               </div>
 
               {/* Bottom accent */}
               <div
                 className="h-1 transition-all duration-300"
                 style={{
-                  background: activeIndex === index
-                    ? 'linear-gradient(90deg, #2400FF, #EB00FF)'
-                    : 'transparent',
+                  background: activeIndex === index ? 'linear-gradient(90deg, #2400FF, #EB00FF)' : 'transparent',
                 }}
               />
             </div>
@@ -227,26 +296,8 @@ export default function Menu() {
             <div className="absolute inset-0 bg-gradient-to-r from-[#2400FF] to-[#EB00FF] opacity-0 group-hover:opacity-20 transition-opacity" />
           </a>
         </div>
-
-        {/* Category tabs */}
-        <div className="mt-12 flex flex-wrap justify-center gap-4">
-          {[
-            { key: 'ramen', label: t.menu.categories.ramen },
-            { key: 'gyoza', label: t.menu.categories.gyoza },
-            { key: 'karaage', label: t.menu.categories.karaage },
-            { key: 'sides', label: t.menu.categories.sides },
-          ].map((cat) => (
-            <div
-              key={cat.key}
-              className="px-6 py-2 border border-white/10 rounded-full text-white/50 text-sm hover:border-[#2400FF] hover:text-white transition-all cursor-pointer"
-            >
-              {cat.label}
-            </div>
-          ))}
-        </div>
       </div>
 
-      {/* Decorative elements */}
       <div className="absolute top-20 left-10 w-2 h-2 bg-[#2400FF] rounded-full animate-pulse" />
       <div className="absolute bottom-20 right-10 w-2 h-2 bg-[#EB00FF] rounded-full animate-pulse" />
       <div className="absolute top-1/2 left-5 w-1 h-20 bg-gradient-to-b from-transparent via-[#00FF9D]/50 to-transparent" />

@@ -49,6 +49,17 @@ export const translations = {
         gyoza: 'Gyoza',
         karaage: 'Karaage',
         sides: 'Dodatki',
+        descriptions: {
+          ramen: 'Bogaty, głęboki azjatycki bulion — gotowany godzinami, serwowany w minuty.',
+          gyoza: 'Ręcznie lepione pierożki z różnymi farszami, smażone na złoto.',
+          karaage: 'Chrupiący japoński kurczak w naszym autorskim panierze — z ryżem lub frytkami.',
+          sides: 'Extras, sosy i dodatki, które robią różnicę.',
+        },
+      },
+      spicyMayo: {
+        name: 'Spicy Mayo',
+        description: 'Nasz autorski sos z 18 starannie dobranych składników. Serwujemy go do wybranych dań — wkrótce możliwy do kupienia osobno.',
+        tag: 'Autorski',
       },
       items: {
         spicyMiso: {
@@ -277,6 +288,17 @@ export const translations = {
         gyoza: 'Gyoza',
         karaage: 'Karaage',
         sides: 'Sides',
+        descriptions: {
+          ramen: 'Rich, deep Asian broth — simmered for hours, served in minutes.',
+          gyoza: 'Hand-crafted dumplings with various fillings, pan-fried to golden perfection.',
+          karaage: 'Crispy Japanese chicken in our signature batter — with rice or fries.',
+          sides: 'Extras, sauces and sides that make all the difference.',
+        },
+      },
+      spicyMayo: {
+        name: 'Spicy Mayo',
+        description: 'Our signature sauce made from 18 carefully selected ingredients. Served with select dishes — available to buy separately very soon.',
+        tag: 'Signature',
       },
       items: {
         spicyMiso: {
