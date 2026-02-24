@@ -247,7 +247,7 @@ export default function About() {
                     {stats.map((stat, index) => (
                       <div
                         key={index}
-                        className="stat-item cyber-card p-4 rounded-lg flex items-start gap-4 group hover:scale-[1.02] transition-all duration-300"
+                        className="stat-item cyber-card p-4 rounded-lg flex items-start gap-4 group transition-colors duration-300"
                         style={{ '--stat-color': stat.color } as React.CSSProperties}
                       >
                         <stat.icon
@@ -257,20 +257,21 @@ export default function About() {
                         <div className="flex-1 min-w-0">
                           <span className="text-white text-sm font-bold block">{stat.label}</span>
 
-                          {/* Scan line — expands on hover */}
+                          {/* Scan line */}
                           <div
-                            className="h-px mt-2 mb-0 w-0 group-hover:w-full transition-all duration-300 ease-out"
+                            className="h-px mt-2 w-0 group-hover:w-full transition-all duration-300 ease-out"
                             style={{ background: `linear-gradient(90deg, ${stat.color}, transparent)` }}
                           />
 
-                          {/* Description — slides down on hover */}
-                          <div className="overflow-hidden max-h-0 group-hover:max-h-24 transition-all duration-500 ease-out">
-                            <p
-                              className="text-white/75 text-xs leading-relaxed pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150"
-                            >
-                              {stat.description}
-                            </p>
-                          </div>
+                          {/* Description — ALWAYS takes space, only opacity changes = no layout shift */}
+                          <p
+                            className="text-white/75 text-xs leading-relaxed pt-2
+                                       opacity-0 translate-y-1
+                                       group-hover:opacity-100 group-hover:translate-y-0
+                                       transition-all duration-400 delay-100"
+                          >
+                            {stat.description}
+                          </p>
                         </div>
                       </div>
                     ))}
