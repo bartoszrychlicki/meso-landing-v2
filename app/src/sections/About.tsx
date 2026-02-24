@@ -193,15 +193,31 @@ export default function About() {
                     {stats.map((stat, index) => (
                       <div
                         key={index}
-                        className="stat-item cyber-card p-4 rounded-lg flex items-start gap-4 group hover:scale-[1.02] transition-transform"
+                        className="stat-item cyber-card p-4 rounded-lg flex items-start gap-4 group hover:scale-[1.02] transition-all duration-300"
+                        style={{ '--stat-color': stat.color } as React.CSSProperties}
                       >
                         <stat.icon
-                          className="w-8 h-8 flex-shrink-0 mt-0.5 transition-transform group-hover:scale-110"
+                          className="w-8 h-8 flex-shrink-0 mt-0.5 transition-transform duration-300 group-hover:scale-110"
                           style={{ color: stat.color }}
                         />
-                        <div>
+                        <div className="flex-1 min-w-0">
                           <span className="text-white text-sm font-bold block">{stat.label}</span>
-                          <p className="text-white/50 text-xs mt-1 leading-relaxed">{stat.description}</p>
+
+                          {/* Scan line — expands on hover */}
+                          <div
+                            className="h-px mt-2 mb-0 w-0 group-hover:w-full transition-all duration-300 ease-out"
+                            style={{ background: `linear-gradient(90deg, ${stat.color}, transparent)` }}
+                          />
+
+                          {/* Description — slides down on hover */}
+                          <div className="overflow-hidden max-h-0 group-hover:max-h-24 transition-all duration-500 ease-out">
+                            <p
+                              className="text-xs leading-relaxed pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150"
+                              style={{ color: `${stat.color}99` }}
+                            >
+                              {stat.description}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     ))}
