@@ -13,9 +13,29 @@ export default function About() {
   const contentRef = useRef<HTMLDivElement>(null);
   const statsRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const glow1Ref = useRef<HTMLDivElement>(null);
+  const glow2Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Glow fade-in on scroll
+      gsap.fromTo(
+        [glow1Ref.current, glow2Ref.current],
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 1.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            toggleActions: 'play none none reverse',
+          },
+        }
+      );
+      // Glow slow pulse
+      gsap.to(glow1Ref.current, { scale: 1.15, duration: 6, ease: 'sine.inOut', repeat: -1, yoyo: true });
+      gsap.to(glow2Ref.current, { scale: 1.2, duration: 8, ease: 'sine.inOut', repeat: -1, yoyo: true, delay: 2 });
       gsap.fromTo(
         titleRef.current,
         { x: -100, opacity: 0 },
@@ -121,22 +141,56 @@ export default function About() {
       ref={sectionRef}
       className="relative w-full py-24 overflow-hidden"
     >
-      {/* Background hexagon pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <svg className="hexagon w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      {/* Dark purple base */}
+      <div className="absolute inset-0" style={{ background: '#08000f' }} />
+
+      {/* Glow 1 — top-right blue */}
+      <div
+        ref={glow1Ref}
+        className="absolute pointer-events-none"
+        style={{
+          top: '-10%', right: '-5%',
+          width: '55%', height: '70%',
+          background: 'radial-gradient(ellipse, rgba(36,0,255,0.18) 0%, transparent 70%)',
+          opacity: 0,
+        }}
+      />
+
+      {/* Glow 2 — bottom-left magenta */}
+      <div
+        ref={glow2Ref}
+        className="absolute pointer-events-none"
+        style={{
+          bottom: '-10%', left: '-5%',
+          width: '50%', height: '65%',
+          background: 'radial-gradient(ellipse, rgba(235,0,255,0.13) 0%, transparent 70%)',
+          opacity: 0,
+        }}
+      />
+
+      {/* Hexagon pattern — slightly more visible */}
+      <div className="absolute inset-0 opacity-[0.07] pointer-events-none">
+        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <defs>
             <pattern id="hexagons" width="10" height="10" patternUnits="userSpaceOnUse">
               <polygon
                 points="5,0 10,2.5 10,7.5 5,10 0,7.5 0,2.5"
                 fill="none"
-                stroke="#2400FF"
-                strokeWidth="0.2"
+                stroke="#EB00FF"
+                strokeWidth="0.25"
               />
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#hexagons)" />
         </svg>
       </div>
+
+      {/* Top fade — blend with hero/ticker */}
+      <div className="absolute top-0 left-0 right-0 h-20 pointer-events-none"
+        style={{ background: 'linear-gradient(to bottom, #050505, transparent)' }} />
+      {/* Bottom fade — blend with menu */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
+        style={{ background: 'linear-gradient(to top, #050505, transparent)' }} />
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16">
