@@ -211,6 +211,25 @@ export default function Location() {
                 </div>
                 <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-[#FF6600] group-hover:translate-x-1 transition-all duration-300" />
               </a>
+
+              {/* Glovo */}
+              <a
+                href={t.location.delivery.glovoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-5 p-5 rounded-lg bg-white/5 border border-white/10 hover:border-[#FFC244]/50 hover:bg-[#FFC244]/5 transition-all duration-300"
+              >
+                <img
+                  src="/images/glovo-logo.svg"
+                  alt="Glovo"
+                  className="h-9 object-contain group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="flex-1">
+                  <p className="text-white text-sm font-semibold">Glovo</p>
+                  <p className="text-white/40 text-xs">Zamów z dowozem</p>
+                </div>
+                <ChevronRight className="w-4 h-4 text-white/30 group-hover:text-[#FFC244] group-hover:translate-x-1 transition-all duration-300" />
+              </a>
             </div>
           </div>
         </div>

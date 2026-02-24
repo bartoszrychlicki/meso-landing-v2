@@ -138,6 +138,7 @@ export const translations = {
         subtitle: 'Zamawiaj przez platformy dostawcze',
         woltUrl: 'https://wolt.com',
         pyszneUrl: 'https://pyszne.pl',
+        glovoUrl: 'https://glovoapp.com',
       },
     },
     
@@ -365,6 +366,7 @@ export const translations = {
         subtitle: 'Order through delivery platforms',
         woltUrl: 'https://wolt.com',
         pyszneUrl: 'https://pyszne.pl',
+        glovoUrl: 'https://glovoapp.com',
       },
     },
     
