@@ -212,8 +212,7 @@ export default function About() {
                           {/* Description — slides down on hover */}
                           <div className="overflow-hidden max-h-0 group-hover:max-h-24 transition-all duration-500 ease-out">
                             <p
-                              className="text-xs leading-relaxed pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150"
-                              style={{ color: `${stat.color}99` }}
+                              className="text-white/75 text-xs leading-relaxed pt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-150"
                             >
                               {stat.description}
                             </p>
