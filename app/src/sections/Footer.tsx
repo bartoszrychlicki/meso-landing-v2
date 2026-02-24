@@ -37,10 +37,10 @@ export default function Footer() {
               alt="MESO FOOD" 
               className="h-12 w-auto mb-4"
             />
-            <p className="text-white/60 mb-6">{t.footer.tagline}</p>
+            <p className="text-white/60 mb-6 pl-3">{t.footer.tagline}</p>
 
             {/* Social links */}
-            <div className="flex gap-4">
+            <div className="flex gap-4 pl-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
