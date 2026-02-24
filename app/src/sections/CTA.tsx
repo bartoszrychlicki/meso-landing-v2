@@ -69,28 +69,37 @@ export default function CTA() {
       ref={sectionRef}
       className="relative min-h-[80vh] w-full py-24 overflow-hidden flex items-center justify-center"
     >
-      {/* Animated grid background */}
+      {/* Cyberpunk background image */}
       <div className="absolute inset-0 overflow-hidden">
+        <img
+          src="/images/cta-bg.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover object-center scale-105"
+          style={{ filter: 'saturate(1.15) brightness(0.55)' }}
+          aria-hidden="true"
+        />
+        {/* Dark overlay gradient — top + bottom fade to site bg */}
+        <div className="absolute inset-0" style={{
+          background: 'linear-gradient(to bottom, #050505 0%, transparent 18%, transparent 82%, #050505 100%)'
+        }} />
+        {/* Center dark vignette so text is readable */}
+        <div className="absolute inset-0" style={{
+          background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(5,5,5,0.35) 0%, rgba(5,5,5,0.65) 100%)'
+        }} />
+        {/* Subtle animated grid on top for cyberpunk depth */}
         <div
           ref={gridRef}
-          className="absolute inset-0"
+          className="absolute inset-0 opacity-20"
           style={{
             backgroundImage: `
-              linear-gradient(rgba(36, 0, 255, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(36, 0, 255, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(36, 0, 255, 0.4) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(36, 0, 255, 0.4) 1px, transparent 1px)
             `,
-            backgroundSize: '50px 50px',
+            backgroundSize: '60px 60px',
             transformOrigin: 'center center',
           }}
         />
       </div>
-
-      {/* Vignette */}
-      <div className="absolute inset-0 bg-radial-gradient from-transparent to-[#050505]"
-        style={{
-          background: 'radial-gradient(ellipse at center, transparent 0%, #050505 70%)'
-        }}
-      />
 
       {/* Floating particles */}
       <div className="absolute inset-0 pointer-events-none">

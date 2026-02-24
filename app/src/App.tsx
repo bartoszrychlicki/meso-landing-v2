@@ -9,6 +9,7 @@ import Menu from '@/sections/Menu';
 import Location from '@/sections/Location';
 import Team from '@/sections/Team';
 import CTA from '@/sections/CTA';
+import Ticker from '@/sections/Ticker';
 import Footer from '@/sections/Footer';
 import Franchise from '@/pages/Franchise';
 
@@ -28,6 +29,7 @@ function MainPage() {
     <main className="min-h-screen bg-[#050505]">
       <Navigation />
       <Hero />
+      <Ticker />
       <About />
       <Menu />
       <Location />
