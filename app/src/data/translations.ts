@@ -13,7 +13,7 @@ export const translations = {
     // Hero
     hero: {
       subtitle: 'Azjatycki comfort food z przyszłości',
-      tagline: 'Robiony przez Polaków dla Polaków w Gdańsku',
+      tagline: 'Legendarna, pierwsza ramenownia w Trójmieście wróciła, by odzyskać należne jej miejsce.',
       cta: 'Zamów Teraz',
       scroll: 'Przewiń w dół',
     },
@@ -219,7 +219,7 @@ export const translations = {
     // Hero
     hero: {
       subtitle: 'Asian comfort food from the future',
-      tagline: 'Made by Poles for Poles in Gdańsk',
+      tagline: 'The legendary, first ramen restaurant in Trójmiasto is back to reclaim its rightful place.',
       cta: 'Order Now',
       scroll: 'Scroll Down',
     },
