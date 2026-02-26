@@ -105,7 +105,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2 text-white/60">
                 <MapPin className="w-4 h-4" />
-                ul. Leśna 8/8, 80-322 Gdańsk
+                Bosmańska 1C/2, 80-297 Dąbrowa
               </li>
             </ul>
           </div>
@@ -115,9 +115,9 @@ export default function Footer() {
         <div className="pt-8 border-t border-white/10 mb-8">
           <div className="text-center text-white/40 text-sm space-y-1">
             <p>
-              <strong className="text-white/60">Rychlicki Holding Sp. z o.o.</strong>
+              <strong className="text-white/60">MESO FOOD Sp. z o.o.</strong>
             </p>
-            <p>ul. Leśna 8/8, 80-322 Gdańsk | NIP: 9571130261</p>
+            <p>Bosmańska 1C/2, 80-297 Dąbrowa | NIP: 5892109825</p>
             <p>
               <a href="mailto:kontakt@mesofood.pl" className="hover:text-[#2400FF] transition-colors">
                 kontakt@mesofood.pl
